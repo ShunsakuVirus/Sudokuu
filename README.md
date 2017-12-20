@@ -1,0 +1,2 @@
+# Sudokuu
+Sudoku by GameTemplate
