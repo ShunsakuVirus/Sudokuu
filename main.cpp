@@ -411,8 +411,11 @@ int main() {
 						edgeLength, edgeLength, mouse.x(), mouse.y())) {
 
 					if (num[i][j] == selectedNum) {
+						if (correct[i][j] == 0)
+							correctCount[selectedNum - 1] ++;
+
 						correct[i][j] = 1;
-						correctCount[selectedNum - 1] ++;
+
 						if (correctCount[0] == 9 &&
 							correctCount[1] == 9 &&
 							correctCount[2] == 9 &&
@@ -441,7 +444,7 @@ int main() {
 		if (isCleared) break;
 		env.end();
 	}
-
+	if (isCleared == false) break;
 	Vec2f size = font.drawSize("CLEAR!");
 	font.size(100);
 
